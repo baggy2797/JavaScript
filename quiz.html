@@ -1,0 +1,268 @@
+<html>
+<head>
+
+    <title>Simple Math Quiz</title>
+    <body>
+    <script type="text/javascript">
+        var Correct=0;
+        var Incorrect =0;
+        var Total_Attempted =0;
+
+        function CheckScore()
+        {
+            alert("Total:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+        }
+
+        function ResetScore()
+        {
+            Total_Attempted =0;
+            Correct =0;
+            Incorrect=0;
+        }
+
+        function IntegerAddition()
+        {
+            var x =Math.floor(Math.random() * 10);
+            var y =Math.floor(Math.random() * 10);
+            var Message =""+x+"+"+y+"=";
+            var solution = prompt(Message);
+            var output = x+y;
+            if(output == solution)
+            {
+                Total_Attempted++;
+                Correct++;
+                alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+            else
+            {
+                Total_Attempted++;
+                Incorrect++;
+                alert("Wrong answer.\nThe correct answer is "+output+"\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+        }
+
+        function IntegerSubtraction()
+        {
+            var x =Math.floor(Math.random() * 10);
+            var y =Math.floor(Math.random() * 10);
+            var Message =""+x+"-"+y+"=";
+            var solution = prompt(Message);
+            var output = x-y;
+            if(output == solution)
+            {
+                Total_Attempted++;
+                Correct++;
+                alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+            else
+            {
+                Total_Attempted++;
+                Incorrect++;
+                alert("Wrong answer.\nThe correct answer is "+output+"\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+        }
+
+        function FloatAddition()
+        {
+            var x =Math.floor(Math.random() * 10) + (0.01)*Math.floor(Math.random()* 10);
+            var y =Math.floor(Math.random() * 10) + (0.01)*Math.floor(Math.random()* 10);
+            var Message =""+x+"+"+y+"=";
+            var solution = prompt(Message);
+            var output = x+y;
+            if(output == solution)
+            {
+                Total_Attempted++;
+                Correct++;
+                alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+            else
+            {
+                Total_Attempted++;
+                Incorrect++;
+                alert("Wrong answer.\nThe correct answer is "+output+"\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+        }
+
+        function FloatSubtraction()
+        {
+            var x =Math.floor(Math.random() * 10) + (0.01)*Math.floor(Math.random()* 10);
+            var y =Math.floor(Math.random() * 10) + (0.01)*Math.floor(Math.random()* 10);
+            var Message =""+x+"-"+y+"=";
+            var solution = prompt(Message);
+            var output = x-y;
+                if(output == solution)
+                {
+                    Total_Attempted++;
+                    Correct++;
+                    alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+                }
+                else
+                {
+                    Total_Attempted++;
+                    Incorrect++;
+                    alert("Wrong answer.\nThe correct answer is "+output+"\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+                }
+
+        }
+
+        function ComplexAddition()
+        {
+            var x1=Math.floor(Math.random() * 11) ;
+	        var y1= Math.floor(Math.random() * 11) ;
+            var x2=Math.floor(Math.random() * 11) ;
+            var y2= Math.floor(Math.random() * 11) ;
+
+            min = 1;
+            max = 8;
+
+            new1 = Math.floor(Math.random() * (max - min + 1)) + min;
+            
+            switch(new1)
+            {
+                case 1:
+                {
+                    x1 = x1;
+                    y1 = y1;
+                    x2 = x2;
+                    y2 = y2; 
+                }
+                case 2:
+                {
+                    x1 = x1;
+                    y1 = (-1)*y1;
+                    x2 = x2;
+                    y2 = y2;  
+                }
+                case 3:
+                {
+                    x1 = x1;
+                    y1 =y1;
+                    x2 = x2;
+                    y2 = (-1)*y2;
+                }
+                case 4:
+                {
+                    x1 = (-1)*x1;
+                    y1 =y1;
+                    x2 =x2;
+                    y2 =y2; 
+                }
+                case 5:
+                {
+                    x1 = x1;
+                    y1 = y1;
+                    x2 = (-1)*x2;
+                    y2 = y2;    
+                }
+                case 6:
+                {
+                    x1 = (-1)*x1;
+                    y1 = (-1)*y1;
+                    x2 = x2;
+                    y2 = (-1)*y2;
+                }
+                case 7:
+                {
+                    x1 = x1;
+                    y1 = (-1)*y1;
+                    x2 = (-1)*x2;
+                    y2 = (-1)*y2;
+                }
+                case 8:
+                {
+                    x1 = (-1)*x1;
+                    y1 = (-1)*y1;
+                    x2 = (-1)*x2;
+                    y2 = (-1)*y2;     
+                }
+            }
+            
+            var Message="Complex Addition\nExpected input format: x+yi\n("+x1+"+"+y1+"i)  +  ("+x2+"+"+y2+"i)) =";
+            var solution= prompt(Message);
+            var res = solution.split("+");
+            var userX=res[0];
+            var userY=res[1].substring(0,res[1].indexOf("i"));
+            var real_com=x1+x2;
+            var complex_com=y1+y2;
+            
+            if(userX==real_com && userY==complex_com)
+            {
+                Correct++;
+                Total_Attempted++;
+                alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+            else
+            {
+                Incorrect++;
+                Total_Attempted++;
+                alert("Wrong answer.\nThe correct answer is ("+real_com+"+"+complex_com+"i)\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }      
+        }
+
+        function ComplexSubtraction()
+        {
+            var x1 =Math.floor(Math.random() * 10);
+            var y1 =Math.floor(Math.random() * 10);
+            var x2 =Math.floor(Math.random() * 10);
+            var y2 =Math.floor(Math.random() * 10);
+            var userX,userY,res;
+            var signFlag="+";
+            var Message="Complex Addition\nExpected input format: x+yi\n("+x1+"+"+y1+"i)  -  ("+x2+"+"+y2+"i) =";
+            var solution= prompt(Message);
+            if(solution.indexOf("+")==-1)
+            {
+                signFlag="-";
+                res = solution.split("-");
+                userX=res[0];
+                userY=res[1].substring(0,res[1].indexOf("i"));
+                userY=-userY;
+            }
+            else
+            {
+                res = solution.split("+");
+                userX=res[0];
+                userY=res[1].substring(0,res[1].indexOf("i"));
+            }
+            var real_com=x1-x2;
+            var complex_com=y1-y2;
+            if(userX==real_com && userY==complex_com)
+            {
+                Correct++;
+                Total_Attempted++;
+                alert("Correct answer.\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+            else
+            {
+                Incorrect++;
+                Total_Attempted++;
+                alert("Wrong answer.\nThe correct answer is ("+real_com+signFlag+complex_com+"i)\nTotal:"+Total_Attempted+"\nCorrect:"+Correct+"\nWrong:"+Incorrect);
+            }
+        }
+        
+    </script>
+    
+        <center>
+            <h2>Simple Math Quiz</h2>
+            <table>
+                <tr>
+                    <td><button type="button" onclick="IntegerAddition()">Integer Addition</button></td>
+                    <td><button type="button" onclick="IntegerSubtraction()">Integer Subtraction</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="FloatAddition()">Float Addition</button></td>
+                    <td><button type="button" onclick="FloatSubtraction()">Float Subtraction</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="ComplexAddition()">Complex Addition</button></td>
+                    <td><button type="button" onclick="ComplexSubtraction()">Complex Subtraction</button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" onclick="CheckScore()">Check Score</button></td>
+                    <td><button type="button" onclick="ResetScore()">Reset Score</button></td>
+                </tr>
+            </table>
+        </center>
+        
+    </body>
+</head>
+</html>
